@@ -1,0 +1,116 @@
+﻿<Window x:Class="shumilovskih_pp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Подсистема работы с партнерами - shumilovskih_pp"
+        Height="650" Width="1100"
+        WindowStartupLocation="CenterScreen"
+        Background="{StaticResource BackgroundBrush}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Menu Grid.Row="0" Background="{StaticResource PrimaryBrush}">
+            <MenuItem Header="_Партнёры" Foreground="White">
+                <MenuItem x:Name="AddPartnerMenuItem" Header="Добавить партнера" Click="AddPartner_Click" Background="{StaticResource PrimaryBrush}"/>
+                <MenuItem x:Name="EditPartnerMenuItem" Header="Изменить партнера" Click="EditPartner_Click" Background="{StaticResource PrimaryBrush}"/>
+                <MenuItem x:Name="DeletePartnerMenuItem" Header="Удалить партнера" Click="DeletePartner_Click" Background="{StaticResource PrimaryBrush}"/>
+            </MenuItem>
+            <MenuItem Header="_Продукция" Foreground="White">
+                <MenuItem x:Name="ViewProductsMenuItem" Header="Просмотр продукции" Click="ViewProducts_Click" Background="{StaticResource PrimaryBrush}"/>
+                <MenuItem x:Name="AddProductMenuItem" Header="Добавить продукцию" Click="AddProduct_Click" Background="{StaticResource PrimaryBrush}"/>
+            </MenuItem>
+            <MenuItem Header="_Продажи" Foreground="White">
+                <MenuItem x:Name="ViewSalesMenuItem" Header="Просмотр истории" Click="ViewSales_Click" Background="{StaticResource PrimaryBrush}"/>
+                <MenuItem x:Name="AddSaleMenuItem" Header="Добавить продажу" Click="AddSale_Click" Background="{StaticResource PrimaryBrush}"/>
+            </MenuItem>
+            <MenuItem Header="_Справка" Foreground="White" HorizontalAlignment="Right">
+                <MenuItem x:Name="AboutMenuItem" Header="О программе" Click="About_Click" Background="{StaticResource PrimaryBrush}"/>
+            </MenuItem>
+        </Menu>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Border Grid.Column="0" Style="{StaticResource PanelBorderStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Style="{StaticResource PanelHeaderStyle}">
+                        <TextBlock Text="Список партнеров" Style="{StaticResource PanelHeaderTextStyle}"/>
+                    </Border>
+                    <DataGrid Grid.Row="1" x:Name="PartnersDataGrid"
+                              AutoGenerateColumns="False" IsReadOnly="True"
+                              SelectionMode="Single" SelectionUnit="FullRow"
+                              CanUserAddRows="False" CanUserDeleteRows="False"
+                              SelectionChanged="PartnersDataGrid_SelectionChanged"
+                              BorderThickness="0" Margin="5">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding PartnerId}" Width="50"/>
+                            <DataGridTextColumn Header="Компания" Binding="{Binding CompanyName}" Width="150"/>
+                            <DataGridTextColumn Header="Тип" Binding="{Binding PartnerType.TypeName}" Width="100"/>
+                            <DataGridTextColumn Header="Рейтинг" Binding="{Binding Rating}" Width="60"/>
+                            <DataGridTextColumn Header="Директор" Binding="{Binding DirectorName}" Width="120"/>
+                            <DataGridTextColumn Header="Email" Binding="{Binding Email}" Width="150"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+
+            <GridSplitter Grid.Column="1" Width="5" Background="{StaticResource BorderBrush}"
+                          HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+            <Border Grid.Column="2" Style="{StaticResource PanelBorderStyle}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Border Grid.Row="0" Style="{StaticResource PanelHeaderStyle}">
+                        <TextBlock Text="История продаж выбранного партнера" Style="{StaticResource PanelHeaderTextStyle}"/>
+                    </Border>
+                    <Border Grid.Row="1" Background="#E8F5E9" Padding="10" 
+                            BorderBrush="{StaticResource SuccessBrush}" BorderThickness="0,0,0,1">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Общая сумма продаж: " FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="TotalSalesTextBlock" Text="0 ₽" FontSize="16"
+                                       FontWeight="Bold" Foreground="{StaticResource SuccessBrush}" 
+                                       VerticalAlignment="Center" Margin="5,0,20,0"/>
+                            <TextBlock Text="Скидка: " FontWeight="Bold" VerticalAlignment="Center"/>
+                            <TextBlock x:Name="DiscountTextBlock" Text="0%" FontSize="16"
+                                       FontWeight="Bold" Foreground="{StaticResource DangerBrush}" 
+                                       VerticalAlignment="Center" Margin="5,0,0,0"/>
+                        </StackPanel>
+                    </Border>
+                    <DataGrid Grid.Row="2" x:Name="SalesDataGrid"
+                              AutoGenerateColumns="False" IsReadOnly="True"
+                              CanUserAddRows="False" CanUserDeleteRows="False"
+                              BorderThickness="0" Margin="5">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID" Binding="{Binding SaleId}" Width="50"/>
+                            <DataGridTextColumn Header="Продукция" Binding="{Binding Product.ProductName}" Width="150"/>
+                            <DataGridTextColumn Header="Артикул" Binding="{Binding Product.Article}" Width="100"/>
+                            <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}" Width="80"/>
+                            <DataGridTextColumn Header="Сумма" Binding="{Binding TotalAmount, StringFormat={}{0:N2} ₽}" Width="120"/>
+                            <DataGridTextColumn Header="Дата" Binding="{Binding SaleDate, StringFormat={}{0:dd.MM.yyyy}}" Width="100"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <StatusBar Grid.Row="1" VerticalAlignment="Bottom" Background="#ECF0F1">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusTextBlock" Text="Готов к работе" Foreground="{StaticResource PrimaryBrush}"/>
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</Window>

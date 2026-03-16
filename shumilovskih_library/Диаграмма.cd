@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="shumilovskih_library.Context.ApplicationContext">
+    <Position X="6.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAQQAAAAAAAAAAAAAAEAAAAAEAAAAAAAAAAAQ=</HashCode>
+      <FileName>Context\ApplicationContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shumilovskih_library.Exceptions.PartnerException">
+    <Position X="6.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Exceptions\PartnerException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shumilovskih_library.Models.PartnerType">
+    <Position X="12.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAAAABEAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PartnerType.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shumilovskih_library.Models.Product">
+    <Position X="8.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>FQAAAAgAAAAgAAAAAQAAAAAAEiAAAAAAAwAAAAAIAAA=</HashCode>
+      <FileName>Models\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shumilovskih_library.Models.SaleHistory">
+    <Position X="10.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACAAAAAAAUAAAAAAAAAAAAAAAAAAAAAgAAgAEAEAg=</HashCode>
+      <FileName>Models\SaleHistory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Partner">
+    <Position X="14.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQQgAQCAEAAAAAAAAAABQAgAAAAEGAgAAIAAAACA=</HashCode>
+      <FileName>Models\Partner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="shumilovskih_library.Services.DiscountService" BaseTypeListCollapsed="true">
+    <Position X="6.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIAAAAAAAAABAAAAgAAAAAAAAIAABAAAQAAgAAAAAAA=</HashCode>
+      <FileName>Services\DiscountService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="shumilovskih_library.Services.PartnerService" BaseTypeListCollapsed="true">
+    <Position X="15.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>KAAAACBAACAEBAAACIAAAAAIEBAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Services\PartnerService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="shumilovskih_library.Services.PartnerTypeService" BaseTypeListCollapsed="true">
+    <Position X="8.75" Y="8.25" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAEBAAAAAAAAAEAAAAAAAgAAAAAAAAAIIA=</HashCode>
+      <FileName>Services\PartnerTypeService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="shumilovskih_library.Services.ProductService" BaseTypeListCollapsed="true">
+    <Position X="11.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAEBAAAAAAAAAEAAAAAAAgAAAAAAAAAIIA=</HashCode>
+      <FileName>Services\ProductService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="shumilovskih_library.Services.SaleHistoryService" BaseTypeListCollapsed="true">
+    <Position X="13.5" Y="8.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAACAEBAAAAAAgAAEAAAAAAAgAAAAAAAAAIIA=</HashCode>
+      <FileName>Services\SaleHistoryService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="shumilovskih_library.Services.IDiscountService">
+    <Position X="17.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAABAAAAAAAAAAAAAAAABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IDiscountService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="shumilovskih_library.Services.IPartnerService">
+    <Position X="17.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAACBAAAAAAAAACIAAAAAIEAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Services\IPartnerService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="shumilovskih_library.Services.IPartnerTypeService">
+    <Position X="20" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAEAAAAAAAgAAAAAAAAAIIA=</HashCode>
+      <FileName>Services\IPartnerTypeService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="shumilovskih_library.Services.IProductService">
+    <Position X="20" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAAAEAAAAAAAgAAAAAAAAAIIA=</HashCode>
+      <FileName>Services\IProductService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="shumilovskih_library.Services.ISaleHistoryService">
+    <Position X="17.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAAAAAAAAAAAgAAEAAAAAAAgAAAAAAAAAIIA=</HashCode>
+      <FileName>Services\ISaleHistoryService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
